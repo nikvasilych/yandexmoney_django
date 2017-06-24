@@ -121,6 +121,8 @@ class PaymentForm(BasePaymentForm):
     shopFailURL = forms.URLField(initial=settings.YANDEX_MONEY_FAIL_URL)
     shopSuccessURL = forms.URLField(initial=settings.YANDEX_MONEY_SUCCESS_URL)
 
+    ym_merchant_receipt = forms.CharField()
+
     def __init__(self, *args, **kwargs):
         instance = kwargs.pop('instance')
         super(PaymentForm, self).__init__(*args, **kwargs)
