@@ -141,6 +141,7 @@ class PaymentForm(BasePaymentForm):
             self.fields['paymentType'].initial = instance.payment_type
             self.fields['customerNumber'].initial = instance.customer_number
             self.fields['orderNumber'].initial = instance.order_number
+            self.fields['ym_merchant_receipt'].initial = instance.ym_merchant_receipt
 
     def get_display_field_names(self):
         return ['paymentType', 'cps_email', 'cps_phone']
