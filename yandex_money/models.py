@@ -103,7 +103,7 @@ class Payment(models.Model):
         default=CURRENCY.RUB, choices=CURRENCY.CHOICES)
     performed_datetime = models.DateTimeField(
         u'Время выполнение запроса', blank=True, null=True)
-    #ym_merchant_receipt = models.TextField(null=True, blank=True)
+    ym_merchant_receipt = models.TextField(null=True, blank=True)
 
     @property
     def is_payed(self):
