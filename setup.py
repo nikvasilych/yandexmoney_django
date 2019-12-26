@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# - *- coding: utf-8 -*-
 
 import os
 from distutils.core import setup
@@ -33,9 +33,8 @@ setup(
     ],
     install_requires=[
         'Django>1.5',
-        'South>=1.0',
-        'lxml==3.3.4',
-        'django-webtest==1.7.7',
-        'webtest==2.0.15',
+        'lxml>=3.3.4',
+        'django-webtest==1.9.7',
+        'webtest==2.0.33',
     ],
 )
