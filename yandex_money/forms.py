@@ -77,7 +77,7 @@ class BasePaymentForm(forms.Form):
         """
         action;orderSumAmount;orderSumCurrencyPaycash;orderSumBankPaycash;shopId;invoiceId;customerNumber;shopPassword
         """
-        return md5(';'.join(map(str, (
+        s = ';'.join(map(str, (
             cd['action'],
             cd['orderSumAmount'],
             cd['orderSumCurrencyPaycash'],
@@ -86,7 +86,9 @@ class BasePaymentForm(forms.Form):
             cd['invoiceId'],
             cd['customerNumber'],
             settings.YANDEX_MONEY_SHOP_PASSWORD,
-        )))).hexdigest().upper()
+        )))
+        s = s.encode('utf-8')
+        return md5(s).hexdigest().upper()
 
     @classmethod
     def check_md5(cls, cd):
